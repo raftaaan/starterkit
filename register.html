@@ -1,8 +1,3 @@
-<?php    
-// require_once 'php/class/config.php';
-include 'php/functions/function.php';
-// conn();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,66 +48,55 @@ include 'php/functions/function.php';
                
             <!-- Header-->
     <header class="bg-dark py-lg-5">
-       
         <div class="container">
-            <form method="POST" class="form-floating" action="" enctype="multipart/form-data" >
-        
-        	<?php
-              if (isset($_GET['error'])) { ?>
-                <p class="error"><?php echo $_GET['error']; ?></p>
-             <?php }?>
+           
+        <form class="form-floating" action="">
             <div class="row">
                 <h3 class="header-text">Sign Up Account.</h3>
                 <p class="header-title">Already had an Account?<span class="login-header"><a href="login.html">Login</a></span></p>
                 <div class="form-group col-lg-3">
                     <label for="firstname" class="input-title">First name</label>
                     <i class="fa-solid fa-user icon"></i>
-                    <input type="text" class="form-control"  name="firstname" autocomplete="no" required>
+                    <input type="text" class="form-control"  id="firstname" autocomplete="no" pattern="[A-Za-z]" required>
                 </div>
                 <div class="form-group col-lg-3">
                     <label for="lastname" class="input-title">Last name</label>
                     <i class="fa-solid fa-user icon"></i>
-                    <input type="text" class="form-control" name="lastname" autocomplete="no" required>
+                    <input type="text" class="form-control" id="lastname" autocomplete="no" pattern="[A-Za-z]" required>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-lg-6">
                     <label for="email" class="input-title">Email</label>
                     <i class="fa-solid fa-envelope"></i>
-                    <input type="email" class="form-control"  name="email"  autocomplete="no" required>
+                    <input type="email" class="form-control"  id="email"  autocomplete="no" required>
                 </div>
             </div>
             <div class="row">
                 <div class="form-group col-lg-3">
                     <label for="companyid" class="input-title">Company ID</label>
                     <i class="fa-regular fa-id-card icon"></i>
-                    <input type="text" class="form-control" name="companyid" autocomplete="no" required>
+                    <input type="text" class="form-control" id="companyid" autocomplete="no" pattern="[0-9]" required>
                 </div>
                 <div class="form-group col-lg-3">
                     <label for="contact" class="input-title">Contact Number</label>
                     <i class="fa-solid fa-mobile icon"></i>
-                    <input type="text" class="form-control"  name="contact" autocomplete="no"  required>
+                    <input type="text" class="form-control"  id="contact" autocomplete="no"  pattern="[0-9]{11}" required>
                     
                 </div>
             </div>
-        <!--     <div class="row">
+            <div class="row">
                 <div class="form-group col-lg-6">   
                     <input type="checkbox" class="checkbox-agreement"  id="consent"><span class="checkbox-title">By ticking this box, You Agree to our Privacy Policies & Terms and Conditions Agreements</span>
                 </div>
-            </div> -->
+            </div>
             <div class="row">
                 <div class="form-group col-md-4">
-                    <input type="submit" name="submit" class="btn">
-               <?php
-                    if($_SERVER['REQUEST_METHOD']=='POST'){
-                      register($_POST['firstname'],$_POST['lastname'],$_POST['email'], $_POST['companyid'],$_POST['contact']);
-                    }
-                   ?>
+                    <input type="submit" class="btn">
                 </div>
             </div>
-           </form>
+        </form>
         </div>
-     
     </header>
             
         </main>
